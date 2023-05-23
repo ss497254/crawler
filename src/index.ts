@@ -95,12 +95,6 @@ async function bootstrap() {
     try {
         await bootstrap();
     } catch (e: any) {
-        logger.error("Server: error on launch:", e.stack);
-        if (process.send)
-            process.send(
-                JSON.stringify({
-                    message: "StartErrorMessage",
-                })
-            );
+        console.error("Server: error on launch\n", e.stack);
     }
 })();
